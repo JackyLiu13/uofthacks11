@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Alert, TouchableOpacity,  } from 'react-native';
+import { StyleSheet, Text, View, Alert, TouchableOpacity, TextInput} from 'react-native';
 
 export default function App() {
   return (
@@ -12,6 +12,14 @@ export default function App() {
       <TouchableOpacity onPress={() => Alert.alert('Negotiation starting')} style={styles.button}>
         <Text style={styles.text}>Negotiate</Text>
       </TouchableOpacity>
+
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="useless placeholder"
+        keyboardType="numeric"
+      />
 
     </View> 
   );
