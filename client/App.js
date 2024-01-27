@@ -1,16 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to starur app!</Text>
-      <StatusBar style="auto" />
-      <Button
-        title="Press me"
-        onPress={() => Alert.alert('Simple Button pressed')}
-      />
-    </View>
+      <Text style = {styles.titleText}>
+      {'Back To The Market'}
+      {'\n'}
+      </Text>
+
+      <TouchableOpacity onPress={() => Alert.alert('Negotiation starting')} style={styles.button}>
+        <Text style={styles.text}>Negotiate</Text>
+      </TouchableOpacity>
+
+    </View> 
   );
 }
 
@@ -20,5 +23,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  titleText: {
+    fontSize: 40,
+  },
+
+  button: {
+    borderRadius: 200, // High value to ensure it's completely round
+    width: 200, // Diameter of the circle
+    height: 200, // Diameter of the circle
+    backgroundColor: '#007bff', // Choose your color
+    justifyContent: 'center', // Center the text vertically
+    alignItems: 'center', // Center the text horizontally
+  },
+
+  text: {
+    color: 'white',
+    fontSize: 35, // Adjust as needed
   },
 });
